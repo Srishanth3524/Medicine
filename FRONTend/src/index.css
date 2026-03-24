@@ -1,0 +1,109 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-primary: #080d14;
+  --bg-secondary: #0d1520;
+  --bg-card: #111c2a;
+  --bg-card-hover: #162032;
+  --bg-glass: rgba(17, 28, 42, 0.85);
+  --border: rgba(255,255,255,0.07);
+  --border-accent: rgba(0, 230, 180, 0.3);
+
+  --mint: #00e6b4;
+  --mint-dim: rgba(0, 230, 180, 0.15);
+  --mint-glow: rgba(0, 230, 180, 0.4);
+  --amber: #f5a623;
+  --amber-dim: rgba(245, 166, 35, 0.15);
+  --red: #ff4e6a;
+  --red-dim: rgba(255, 78, 106, 0.15);
+  --blue: #4d9fff;
+  --blue-dim: rgba(77, 159, 255, 0.12);
+
+  --text-primary: #e8f0fe;
+  --text-secondary: #7a8fa8;
+  --text-muted: #445566;
+  --text-accent: #00e6b4;
+
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'Instrument Sans', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+
+  --shadow-card: 0 4px 32px rgba(0,0,0,0.4);
+  --shadow-glow: 0 0 32px rgba(0, 230, 180, 0.15);
+  --shadow-red: 0 0 24px rgba(255, 78, 106, 0.2);
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-card-hover);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-accent);
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse-mint {
+  0%, 100% { box-shadow: 0 0 0 0 var(--mint-glow); }
+  50% { box-shadow: 0 0 0 8px transparent; }
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes blinkAlert {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-12px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.5s ease both;
+}
+
+input, select, textarea, button {
+  font-family: var(--font-body);
+}
+
+button {
+  cursor: pointer;
+}
